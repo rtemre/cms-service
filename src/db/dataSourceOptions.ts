@@ -21,6 +21,9 @@ async function getConfig() {
     migrations: [path.join(__dirname, '/migration/**/*.{ts,js}')],
     synchronize: false,
     logging: false,
+    ssl: {
+      rejectUnauthorized: false,
+    }, // Add ssl to fix error: connection is insecure (try using `sslmode=require`)
   } as DataSourceOptions;
 }
 
